@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gabriel Moraes de Oliveira</title>
+
+        <!-- Evita flash de tema errado ao carregar -->
+        <script>
+            if (localStorage.getItem("theme") === "dark") {
+                document.documentElement.classList.add("dark");
+            }
+        </script>
+
+        <!-- Tailwind CSS (via CDN) -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: { DEFAULT: "#0d6efd", hover: "#0b5ed7" },
+                            secondary: { DEFAULT: "#6c757d", hover: "#5c636a" },
+                        },
+                    },
+                },
+            };
+        </script>
+
+        <!-- Font Awesome (ícones) -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+        <!-- CSS do projeto (externo) -->
+        <link rel="stylesheet" href="assets/css/styles.css">
+    </head>
+    <body class="bg-white text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100">
+        <!-- Navbar -->
+        <nav class="sticky top-0 z-50 border-b border-neutral-200 bg-white/95 backdrop-blur dark:border-neutral-700 dark:bg-neutral-900/95">
+            <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
+                <a class="flex items-center font-semibold" href="#top">
+                    <i class="fa-solid fa-code me-2 mr-2 text-primary"></i>Gabriel Moraes
+                </a>
+                <button id="navToggle" class="rounded-md border border-neutral-300 p-2 dark:border-neutral-600 lg:hidden" type="button" aria-label="Abrir menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div id="navMenu" class="absolute left-0 top-full hidden w-full flex-col gap-1 border-b border-neutral-200 bg-white px-4 py-3 dark:border-neutral-700 dark:bg-neutral-900 lg:static lg:flex lg:w-auto lg:flex-row lg:items-center lg:gap-6 lg:border-0 lg:bg-transparent lg:p-0">
+                    <a class="rounded-md px-2 py-1 hover:text-primary" href="#sobre">Sobre</a>
+                    <a class="rounded-md px-2 py-1 hover:text-primary" href="#habilidades">Habilidades</a>
+                    <a class="rounded-md px-2 py-1 hover:text-primary" href="#experiencia">Experiência</a>
+                    <a class="rounded-md px-2 py-1 hover:text-primary" href="#formacao">Formação</a>
+                    <a class="rounded-md px-2 py-1 hover:text-primary" href="#contato">Contato</a>
+                    <div class="mt-2 flex items-center gap-2 lg:ml-4 lg:mt-0">
+                        <span class="hidden text-sm text-secondary lg:inline">Tema</span>
+                        <button id="themeToggle" class="rounded-md border border-neutral-300 px-3 py-1.5 text-sm dark:border-neutral-600" type="button">
+                            <i class="fa-solid fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Header / Informações Básicas -->
+        <header id="top" class="py-12">
+            <div class="mx-auto max-w-6xl px-4">
+                <div class="grid grid-cols-1 items-center gap-8 lg:grid-cols-[minmax(0,1fr)_2fr]">
+                    <div class="text-center">
+                        <img class="profile-img mx-auto shadow-sm" src="assets/img/20260913_163206.jpg.jpeg" alt="Foto de perfil de Gabriel Moraes">
+                        <div class="mt-3 flex flex-wrap justify-center gap-1">
+                            <span class="rounded-full bg-primary px-3 py-1 text-xs font-medium text-white">Ciência da Computação</span>
+                            <span class="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-white">UFLA</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h1 class="mb-3 text-3xl font-semibold sm:text-4xl">
+                            Olá! Eu sou <span class="text-primary">Gabriel Moraes de Oliveira</span>
+                        </h1>
+                        <p class="mb-4 text-lg text-secondary">
+                            Desenvolvedor Backend Júnior (Java | Spring Boot), graduando em Ciência da Computação pela UFLA,
+                            com experiência em APIs REST, PostgreSQL, Docker e Apache Kafka.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <a class="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 font-medium text-white hover:bg-primary-hover" href="#experiencia">
+                                <i class="fa-solid fa-diagram-project"></i>Ver experiência
+                            </a>
+                            <a class="inline-flex items-center gap-2 rounded-md border border-primary px-4 py-2 font-medium text-primary hover:bg-primary hover:text-white" href="#contato">
+                                <i class="fa-solid fa-envelope"></i>Contato
+                            </a>
+                            <a class="inline-flex items-center gap-2 rounded-md border border-secondary px-4 py-2 font-medium text-secondary hover:bg-secondary hover:text-white" href="https://github.com/gabriel-moraes03" target="_blank">
+                                <i class="fa-brands fa-github"></i>GitHub
+                            </a>
+                            <a class="inline-flex items-center gap-2 rounded-md border border-secondary px-4 py-2 font-medium text-secondary hover:bg-secondary hover:text-white" href="https://www.linkedin.com/in/gabriel-moraes-de-oliveira" target="_blank">
+                                <i class="fa-brands fa-linkedin"></i>LinkedIn
+                            </a>
+                        </div>
+                        <hr class="my-6 border-neutral-200 dark:border-neutral-700">
+                        <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                            <div class="rounded-lg border border-neutral-200 bg-neutral-50 p-3 dark:border-neutral-700 dark:bg-neutral-800">
+                                <div class="mb-2 flex items-center gap-2">
+                                    <i class="fa-solid fa-graduation-cap text-primary"></i>
+                                    <strong>Curso</strong>
+                                </div>
+                                <p class="text-secondary">
+                                    Bacharelado em Ciência da Computação — Universidade Federal de Lavras (UFLA), em andamento (Jul/2023 – Jul/2027).
+                                </p>
+                            </div>
+                            <div class="rounded-lg border border-neutral-200 bg-neutral-50 p-3 dark:border-neutral-700 dark:bg-neutral-800">
+                                <div class="mb-2 flex items-center gap-2">
+                                    <i class="fa-solid fa-bullseye text-primary"></i>
+                                    <strong>Objetivo</strong>
+                                </div>
+                                <p class="text-secondary">
+                                    Atuar como Desenvolvedor Backend, desenvolvendo soluções robustas, seguras e escaláveis, com foco em Java, Spring Boot, APIs REST e arquitetura de sistemas distribuídos.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="pb-16">
+            <!-- Sobre -->
+            <section id="sobre" class="py-8">
+                <div class="mx-auto max-w-6xl px-4">
+                    <div class="mb-4">
+                        <h2 class="text-xl font-semibold">Sobre</h2>
+                        <p class="text-secondary">Resumo profissional e informações rápidas.</p>
+                    </div>
+                    <div class="grid grid-cols-1 gap-4 lg:grid-cols-[7fr_5fr]">
+                        <div class="rounded-lg border border-neutral-200 bg-white p-4 shadow-sm dark:border-neutral-700 dark:bg-neutral-800">
+                            <p class="mb-2">
+                                Desenvolvedor Backend Júnior, atuando no desenvolvimento de APIs REST em Java com Spring Boot,
+                                integração e persistência de dados em PostgreSQL, uso de Docker e Apache Kafka.
+                            </p>
+                            <p class="text-secondary">
+                                Graduando em Ciência da Computação pela Universidade Federal de Lavras (UFLA), com foco em Engenharia
+                                de Software e desenvolvimento de sistemas escaláveis. Possuo conhecimento em Clean Code, princípios
+                                SOLID e arquitetura MVP, com experiência complementar em Node.js (NestJS e FastAPI), Elasticsearch,
+                                Cloud Computing (AWS) e Engenharia de Dados, em ambientes ágeis.
+                            </p>
+                        </div>
+                        <div class="rounded-lg border border-neutral-200 bg-white p-4 shadow-sm dark:border-neutral-700 dark:bg-neutral-800">
+                            <h3 class="mb-3 font-semibold">Informações rápidas</h3>
+                            <ul class="space-y-2">
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-location-dot mt-1 text-primary"></i>
+                                    <div><strong>Cidade:</strong> Lavras/MG</div>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-language mt-1 text-primary"></i>
+                                    <div><strong>Idiomas:</strong> Português, Inglês (intermediário)</div>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-laptop-code mt-1 text-primary"></i>
+                                    <div><strong>Área:</strong> Desenvolvimento Backend</div>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-certificate mt-1 text-primary"></i>
+                                    <div><strong>Certificação:</strong> AWS Certified Cloud Practitioner</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Habilidades -->
+            <section id="habilidades" class="py-8">
+                <div class="mx-auto max-w-6xl px-4">
+                    <div class="mb-4">
+                        <h2 class="text-xl font-semibold">Habilidades</h2>
+                        <p class="text-secondary">Tecnologias e competências.</p>
+                    </div>
+                    <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
+                        <div class="rounded-lg border border-neutral-200 bg-white p-4 shadow-sm dark:border-neutral-700 dark:bg-neutral-800">
+                            <h3 class="font-semibold">Backend</h3>
+                            <div class="mb-3 mt-2 flex flex-wrap gap-2">
+                                <span class="rounded-full bg-primary px-3 py-1 text-xs font-medium text-white">Java</span>
+                                <span class="rounded-full bg-primary px-3 py-1 text-xs font-medium text-white">Spring Boot</span>
+                                <span class="rounded-full bg-primary px-3 py-1 text-xs font-medium text-white">Node.js (NestJS)</span>
+                                <span class="rounded-full bg-primary px-3 py-1 text-xs font-medium text-white">Python (FastAPI)</span>
+                                <span class="rounded-full bg-primary px-3 py-1 text-xs font-medium text-white">APIs REST</span>
+                                <span class="rounded-full bg-primary px-3 py-1 text-xs font-medium text-white">Apache Kafka</span>
+                            </div>
+                            <h3 class="font-semibold">Banco de Dados &amp; Busca</h3>
+                            <div class="mb-3 mt-2 flex flex-wrap gap-2">
+                                <span class="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-white">PostgreSQL</span>
+                                <span class="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-white">MySQL</span>
+                                <span class="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-white">Elasticsearch</span>
+                                <span class="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-white">SQLite</span>
+                            </div>
+                            <h3 class="font-semibold">Cloud &amp; DevOps</h3>
+                            <div class="mt-2 flex flex-wrap gap-2">
+                                <span class="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-white">AWS (Lambda, S3, Glue)</span>
+                                <span class="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-white">Docker</span>
+                                <span class="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-white">Git/GitHub</span>
+                            </div>
+                        </div>
+                        <div class="rounded-lg border border-neutral-200 bg-white p-4 shadow-sm dark:border-neutral-700 dark:bg-neutral-800">
+                            <h3 class="font-semibold">Frontend &amp; Dados</h3>
+                            <div class="mb-3 mt-2 flex flex-wrap gap-2">
+                                <span class="rounded-full bg-primary px-3 py-1 text-xs font-medium text-white">React</span>
+                                <span class="rounded-full bg-primary px-3 py-1 text-xs font-medium text-white">TypeScript</span>
+                                <span class="rounded-full bg-primary px-3 py-1 text-xs font-medium text-white">React Native</span>
+                                <span class="rounded-full bg-primary px-3 py-1 text-xs font-medium text-white">Figma</span>
+                                <span class="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-white">PySpark</span>
+                                <span class="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-white">Pandas</span>
+                                <span class="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-white">Scikit-learn</span>
+                            </div>
+                            <h3 class="font-semibold">Linguagens</h3>
+                            <div class="mb-3 mt-2 flex flex-wrap gap-2">
+                                <span class="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-white">Java</span>
+                                <span class="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-white">JavaScript</span>
+                                <span class="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-white">TypeScript</span>
+                                <span class="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-white">Python</span>
+                                <span class="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-white">SQL</span>
+                                <span class="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-white">C++</span>
+                                <span class="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-white">HTML/CSS</span>
+                            </div>
+                            <hr class="my-3 border-neutral-200 dark:border-neutral-700">
+                            <h3 class="font-semibold">Práticas &amp; Metodologias</h3>
+                            <ul class="mt-2 list-inside list-disc space-y-1">
+                                <li>Clean Code e princípios SOLID</li>
+                                <li>Arquitetura MVP e modelagem de dados (Star/Snowflake)</li>
+                                <li>Scrum e Kanban</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experiência -->
+            <section id="experiencia" class="py-8">
+                <div class="mx-auto max-w-6xl px-4">
+                    <div class="mb-4">
+                        <h2 class="text-xl font-semibold">Experiência</h2>
+                        <p class="text-secondary">Trajetória profissional e acadêmica.</p>
+                    </div>
+                    <div class="space-y-3">
+                        <details open class="group rounded-lg border border-neutral-200 bg-white shadow-sm dark:border-neutral-700 dark:bg-neutral-800">
+                            <summary class="flex cursor-pointer list-none items-center justify-between gap-3 p-4 marker:content-none">
+                                <div>
+                                    <strong>Desenvolvedor Backend Junior</strong> — FUNDECC
+                                    <div class="text-sm text-secondary">Mar/2026 – Atualmente</div>
+                                </div>
+                                <i class="fa-solid fa-chevron-down text-secondary transition-transform group-open:rotate-180"></i>
+                            </summary>
+                            <div class="border-t border-neutral-200 p-4 dark:border-neutral-700">
+                                <ul class="mb-2 list-inside list-disc space-y-1">
+                                    <li>Desenvolvimento de APIs REST com Java e Spring Boot, aplicando Clean Code, SOLID e arquitetura MVP.</li>
+                                    <li>Modelagem e integração com banco de dados PostgreSQL.</li>
+                                    <li>Uso de Docker para conteinerização e padronização de ambientes.</li>
+                                    <li>Apoio técnico a novos desenvolvedores, incluindo onboarding e revisão de merge requests.</li>
+                                    <li>Participação ativa em decisões arquiteturais, com autonomia além do escopo júnior.</li>
+                                </ul>
+                                <p class="text-sm text-secondary"><strong>Resultados:</strong> desenvolvimento independente de um dos principais módulos do sistema (persistência, testes e regras de validação); entrega consistente de funcionalidades dentro dos prazos.</p>
+                            </div>
+                        </details>
+                        <details class="group rounded-lg border border-neutral-200 bg-white shadow-sm dark:border-neutral-700 dark:bg-neutral-800">
+                            <summary class="flex cursor-pointer list-none items-center justify-between gap-3 p-4 marker:content-none">
+                                <div>
+                                    <strong>Engenheiro de Software Trainee</strong> — Levty
+                                    <div class="text-sm text-secondary">Dez/2025 – Mar/2026</div>
+                                </div>
+                                <i class="fa-solid fa-chevron-down text-secondary transition-transform group-open:rotate-180"></i>
+                            </summary>
+                            <div class="border-t border-neutral-200 p-4 dark:border-neutral-700">
+                                <ul class="mb-2 list-inside list-disc space-y-1">
+                                    <li>Atuação consultiva junto a clientes e stakeholders, levantamento de requisitos e análise de negócios.</li>
+                                    <li>Desenvolvimento e customização de soluções na plataforma SYDLE ONE (JavaScript, Elasticsearch, APIs REST).</li>
+                                    <li>Interface entre as áreas de negócio e desenvolvimento.</li>
+                                </ul>
+                                <p class="text-sm text-secondary"><strong>Resultados:</strong> desenvolvimento independente de uma POC para um projeto recém-iniciado, um mês após entrada no time.</p>
+                            </div>
+                        </details>
+                        <details class="group rounded-lg border border-neutral-200 bg-white shadow-sm dark:border-neutral-700 dark:bg-neutral-800">
+                            <summary class="flex cursor-pointer list-none items-center justify-between gap-3 p-4 marker:content-none">
+                                <div>
+                                    <strong>Desenvolvedor Frontend</strong> (Prestador de Serviços) — Yucca
+                                    <div class="text-sm text-secondary">Set/2025 – Abr/2026</div>
+                                </div>
+                                <i class="fa-solid fa-chevron-down text-secondary transition-transform group-open:rotate-180"></i>
+                            </summary>
+                            <div class="border-t border-neutral-200 p-4 dark:border-neutral-700">
+                                <ul class="mb-2 list-inside list-disc space-y-1">
+                                    <li>Desenvolvimento e evolução de interfaces em React e TypeScript, como único desenvolvedor frontend da startup.</li>
+                                    <li>Participação em todo o ciclo do produto, da concepção à integração com APIs.</li>
+                                    <li>Uso estratégico de IA (Claude) para acelerar entregas e manter código limpo e escalável.</li>
+                                </ul>
+                                <p class="text-sm text-secondary"><strong>Resultados:</strong> desenvolvimento completo da primeira versão do projeto do principal cliente da empresa.</p>
+                            </div>
+                        </details>
+                        <details class="group rounded-lg border border-neutral-200 bg-white shadow-sm dark:border-neutral-700 dark:bg-neutral-800">
+                            <summary class="flex cursor-pointer list-none items-center justify-between gap-3 p-4 marker:content-none">
+                                <div>
+                                    <strong>Estagiário Desenvolvedor de Dados</strong> — Compass UOL
+                                    <div class="text-sm text-secondary">Fev/2025 – Jul/2025</div>
+                                </div>
+                                <i class="fa-solid fa-chevron-down text-secondary transition-transform group-open:rotate-180"></i>
+                            </summary>
+                            <div class="border-t border-neutral-200 p-4 dark:border-neutral-700">
+                                <ul class="list-inside list-disc space-y-1">
+                                    <li>Desenvolvimento de pipelines de ETL com Python, SQL e PySpark.</li>
+                                    <li>Modelagem de Data Warehouses (Star Schema e Snowflake).</li>
+                                    <li>Análises exploratórias com Pandas e NumPy e visualizações com AWS QuickSight.</li>
+                                    <li>Implementação de arquiteturas serverless na AWS (Glue, Lambda, S3).</li>
+                                </ul>
+                            </div>
+                        </details>
+                        <details class="group rounded-lg border border-neutral-200 bg-white shadow-sm dark:border-neutral-700 dark:bg-neutral-800">
+                            <summary class="flex cursor-pointer list-none items-center justify-between gap-3 p-4 marker:content-none">
+                                <div>
+                                    <strong>Presidente</strong> — Emakers Junior
+                                    <div class="text-sm text-secondary">Fev/2025 – Dez/2025</div>
+                                </div>
+                                <i class="fa-solid fa-chevron-down text-secondary transition-transform group-open:rotate-180"></i>
+                            </summary>
+                            <div class="border-t border-neutral-200 p-4 dark:border-neutral-700">
+                                <ul class="mb-2 list-inside list-disc space-y-1">
+                                    <li>Liderança estratégica e institucional, planejamento e relacionamento com clientes e parceiros.</li>
+                                    <li>Supervisão técnica do desenvolvimento com Java e Spring Boot.</li>
+                                    <li>Organização da 7ª Semana de Tecnologia da Informação (SE7I) da UFLA, liderando equipe de mais de 90 pessoas.</li>
+                                </ul>
+                                <p class="text-sm text-secondary"><strong>Resultados:</strong> expansão da empresa júnior de 20 para 47 membros; SE7I com cerca de 200 participantes, gerando contratações.</p>
+                            </div>
+                        </details>
+                        <details class="group rounded-lg border border-neutral-200 bg-white shadow-sm dark:border-neutral-700 dark:bg-neutral-800">
+                            <summary class="flex cursor-pointer list-none items-center justify-between gap-3 p-4 marker:content-none">
+                                <div>
+                                    <strong>Diretor de Projetos</strong> — Emakers Junior
+                                    <div class="text-sm text-secondary">Set/2024 – Fev/2025</div>
+                                </div>
+                                <i class="fa-solid fa-chevron-down text-secondary transition-transform group-open:rotate-180"></i>
+                            </summary>
+                            <div class="border-t border-neutral-200 p-4 dark:border-neutral-700">
+                                <ul class="list-inside list-disc space-y-1">
+                                    <li>Gestão de projetos e supervisão de squads de desenvolvimento.</li>
+                                    <li>Arquitetura de soluções e levantamento de requisitos junto a clientes.</li>
+                                    <li>Apoio comercial em negociações e mentoria técnica de desenvolvedores.</li>
+                                </ul>
+                            </div>
+                        </details>
+                        <details class="group rounded-lg border border-neutral-200 bg-white shadow-sm dark:border-neutral-700 dark:bg-neutral-800">
+                            <summary class="flex cursor-pointer list-none items-center justify-between gap-3 p-4 marker:content-none">
+                                <div>
+                                    <strong>Desenvolvedor Frontend</strong> — Emakers Junior
+                                    <div class="text-sm text-secondary">Abr/2024 – Ago/2024</div>
+                                </div>
+                                <i class="fa-solid fa-chevron-down text-secondary transition-transform group-open:rotate-180"></i>
+                            </summary>
+                            <div class="border-t border-neutral-200 p-4 dark:border-neutral-700">
+                                <ul class="list-inside list-disc space-y-1">
+                                    <li>Desenvolvimento de interfaces responsivas em React, com foco em UX/UI.</li>
+                                    <li>Implementação de layouts a partir de protótipos no Figma.</li>
+                                    <li>Colaboração com equipes multidisciplinares.</li>
+                                </ul>
+                            </div>
+                        </details>
+                        <details class="group rounded-lg border border-neutral-200 bg-white shadow-sm dark:border-neutral-700 dark:bg-neutral-800">
+                            <summary class="flex cursor-pointer list-none items-center justify-between gap-3 p-4 marker:content-none">
+                                <div>
+                                    <strong>Pesquisador Científico</strong> — Iniciação Científica CNPq
+                                    <div class="text-sm text-secondary">Mar/2024 – Mar/2025</div>
+                                </div>
+                                <i class="fa-solid fa-chevron-down text-secondary transition-transform group-open:rotate-180"></i>
+                            </summary>
+                            <div class="border-t border-neutral-200 p-4 dark:border-neutral-700">
+                                <ul class="mb-2 list-inside list-disc space-y-1">
+                                    <li>Análise e processamento de dados com Python, Pandas, NumPy e Matplotlib.</li>
+                                    <li>Implementação e avaliação de algoritmos de Machine Learning (K-Means e KNN).</li>
+                                    <li>Desenvolvimento de funcionalidades mobile em React Native integradas ao backend.</li>
+                                </ul>
+                                <p class="text-sm text-secondary"><strong>Resultados:</strong> software para avaliação de desempenho de ciclistas, registrado no INPI, com validação científica e por usuários.</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Formação -->
+            <section id="formacao" class="py-8">
+                <div class="mx-auto max-w-6xl px-4">
+                    <div class="mb-4">
+                        <h2 class="text-xl font-semibold">Formação</h2>
+                        <p class="text-secondary">Graduação e certificações.</p>
+                    </div>
+                    <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
+                        <div class="rounded-lg border border-neutral-200 bg-white p-4 shadow-sm dark:border-neutral-700 dark:bg-neutral-800">
+                            <div class="flex items-start gap-2">
+                                <i class="fa-solid fa-graduation-cap mt-1 text-primary"></i>
+                                <div>
+                                    <h3 class="mb-1 font-semibold">Bacharelado em Ciência da Computação</h3>
+                                    <p class="text-sm text-secondary">Universidade Federal de Lavras (UFLA) — Em andamento (Jul/2023 – Jul/2027)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rounded-lg border border-neutral-200 bg-white p-4 shadow-sm dark:border-neutral-700 dark:bg-neutral-800">
+                            <h3 class="mb-3 font-semibold">Certificações e idiomas</h3>
+                            <ul class="space-y-2">
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-certificate mt-1 text-primary"></i>
+                                    <div>AWS Certified Cloud Practitioner</div>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-language mt-1 text-primary"></i>
+                                    <div>Inglês — Nível intermediário (leitura, escrita, compreensão e fala)</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contato -->
+            <section id="contato" class="py-8">
+                <div class="mx-auto max-w-6xl px-4">
+                    <div class="mb-4">
+                        <h2 class="text-xl font-semibold">Contato</h2>
+                        <p class="text-secondary">Como falar comigo.</p>
+                    </div>
+                    <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
+                        <div class="rounded-lg border border-neutral-200 bg-white p-4 shadow-sm dark:border-neutral-700 dark:bg-neutral-800">
+                            <ul class="space-y-2">
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-envelope text-primary"></i>
+                                    <a class="hover:underline" href="mailto:moraesgabriel0003@gmail.com">moraesgabriel0003@gmail.com</a>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-phone text-primary"></i>
+                                    <span>(35) 99228-8233</span>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-solid fa-location-dot text-primary"></i>
+                                    <span>Lavras, Minas Gerais</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="rounded-lg border border-neutral-200 bg-white p-4 shadow-sm dark:border-neutral-700 dark:bg-neutral-800">
+                            <ul class="space-y-2">
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-brands fa-github text-primary"></i>
+                                    <a class="hover:underline" href="https://github.com/gabriel-moraes03" target="_blank" rel="noreferrer">github.com/gabriel-moraes03</a>
+                                </li>
+                                <li class="flex items-center gap-2">
+                                    <i class="fa-brands fa-linkedin text-primary"></i>
+                                    <a class="hover:underline" href="https://www.linkedin.com/in/gabriel-moraes-de-oliveira" target="_blank" rel="noreferrer">linkedin.com/in/gabriel-moraes-de-oliveira</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Rodapé -->
+        <footer class="border-t border-neutral-200 py-6 dark:border-neutral-700">
+            <div class="mx-auto flex max-w-6xl flex-col justify-between gap-2 px-4 text-sm text-secondary md:flex-row">
+                <small>© <span id="year"></span> Gabriel Moraes de Oliveira</small>
+                <small>Feito com HTML + Tailwind CSS + um pouco de JS</small>
+            </div>
+        </footer>
+
+        <!-- JS do projeto -->
+        <script src="assets/js/script.js"></script>
+    </body>
+</html>

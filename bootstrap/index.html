@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gabriel Moraes de Oliveira</title>
+
+        <!-- Bootstrap 5 (CSS) -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Font Awesome (ícones) -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+        <!-- CSS do projeto (externo) -->
+        <link rel="stylesheet" href="assets/css/styles.css">
+    </head>
+    <body class="bg-body">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg border-bottom bg-body sticky-top">
+            <div class="container">
+                <a class="navbar-brand fw-semibold" href="#top">
+                    <i class="fa-solid fa-code me-2"></i>Gabriel Moraes
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navContent">
+                    <ul class="navbar-nav ms-auto gap-lg-1">
+                        <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#experiencia">Experiência</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#formacao">Formação</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                    </ul>
+                    <div class="ms-lg-3 d-flex align-items-center gap-2 py-2 py-lg-0">
+                        <span class="small text-secondary d-none d-lg-inline">Tema</span>
+                        <button id="themeToggle" class="btn btn-outline-secondary btn-sm" type="button">
+                            <i class="fa-solid fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Header / Informações Básicas -->
+        <header id="top" class="py-5">
+            <div class="container">
+                <div class="row align-items-center g-4">
+                    <div class="col-12 col-lg-4 text-center">
+                        <img class="profile-img shadow-sm" src="assets/img/20260913_163206.jpg.jpeg" alt="Foto de perfil de Gabriel Moraes">
+                        <div class="mt-3">
+                            <span class="badge text-bg-primary me-1">Ciência da Computação</span>
+                            <span class="badge text-bg-secondary">UFLA</span>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-8">
+                        <h1 class="display-6 fw-semibold mb-3">
+                            Olá! Eu sou <span class="text-primary">Gabriel Moraes de Oliveira</span>
+                        </h1>
+                        <p class="lead text-secondary mb-4">
+                            Desenvolvedor Backend Júnior (Java | Spring Boot), graduando em Ciência da Computação pela UFLA,
+                            com experiência em APIs REST, PostgreSQL, Docker e Apache Kafka.
+                        </p>
+                        <div class="d-flex flex-wrap gap-2">
+                            <a class="btn btn-primary" href="#experiencia">
+                                <i class="fa-solid fa-diagram-project me-2"></i>Ver experiência
+                            </a>
+                            <a class="btn btn-outline-primary" href="#contato">
+                                <i class="fa-solid fa-envelope me-2"></i>Contato
+                            </a>
+                            <a class="btn btn-outline-secondary" href="https://github.com/gabriel-moraes03" target="_blank">
+                                <i class="fa-brands fa-github me-2"></i>GitHub
+                            </a>
+                            <a class="btn btn-outline-secondary" href="https://www.linkedin.com/in/gabriel-moraes-de-oliveira" target="_blank">
+                                <i class="fa-brands fa-linkedin me-2"></i>LinkedIn
+                            </a>
+                        </div>
+                        <hr class="my-4">
+                        <div class="row g-3">
+                            <div class="col-12 col-md-6">
+                                <div class="p-3 rounded-3 border bg-body-tertiary">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <i class="fa-solid fa-graduation-cap text-primary"></i>
+                                        <strong>Curso</strong>
+                                    </div>
+                                    <p class="mb-0 text-secondary">
+                                        Bacharelado em Ciência da Computação — Universidade Federal de Lavras (UFLA), em andamento (Jul/2023 – Jul/2027).
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="p-3 rounded-3 border bg-body-tertiary">
+                                    <div class="d-flex align-items-center gap-2 mb-2">
+                                        <i class="fa-solid fa-bullseye text-primary"></i>
+                                        <strong>Objetivo</strong>
+                                    </div>
+                                    <p class="mb-0 text-secondary">
+                                        Atuar como Desenvolvedor Backend, desenvolvendo soluções robustas, seguras e escaláveis, com foco em Java, Spring Boot, APIs REST e arquitetura de sistemas distribuídos.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="pb-5">
+            <!-- Sobre -->
+            <section id="sobre" class="py-4">
+                <div class="container">
+                    <div class="mb-3">
+                        <h2 class="h4 mb-1">Sobre</h2>
+                        <p class="text-secondary mb-0">Resumo profissional e informações rápidas.</p>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-12 col-lg-7">
+                            <div class="card shadow-sm">
+                                <div class="card-body">
+                                    <p class="mb-2">
+                                        Desenvolvedor Backend Júnior, atuando no desenvolvimento de APIs REST em Java com Spring Boot,
+                                        integração e persistência de dados em PostgreSQL, uso de Docker e Apache Kafka.
+                                    </p>
+                                    <p class="mb-0 text-secondary">
+                                        Graduando em Ciência da Computação pela Universidade Federal de Lavras (UFLA), com foco em Engenharia
+                                        de Software e desenvolvimento de sistemas escaláveis. Possuo conhecimento em Clean Code, princípios
+                                        SOLID e arquitetura MVP, com experiência complementar em Node.js (NestJS e FastAPI), Elasticsearch,
+                                        Cloud Computing (AWS) e Engenharia de Dados, em ambientes ágeis.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-5">
+                            <div class="card shadow-sm">
+                                <div class="card-body">
+                                    <h3 class="h6 mb-3">Informações rápidas</h3>
+                                    <ul class="list-unstyled mb-0">
+                                        <li class="d-flex gap-2 mb-2">
+                                            <i class="fa-solid fa-location-dot text-primary mt-1"></i>
+                                            <div><strong>Cidade:</strong> Lavras/MG</div>
+                                        </li>
+                                        <li class="d-flex gap-2 align-items-start mb-2">
+                                            <i class="fa-solid fa-language mt-1 text-primary"></i>
+                                            <div><strong>Idiomas:</strong> Português, Inglês (intermediário)</div>
+                                        </li>
+                                        <li class="d-flex gap-2 align-items-start mb-2">
+                                            <i class="fa-solid fa-laptop-code text-primary mt-1"></i>
+                                            <div><strong>Área:</strong> Desenvolvimento Backend</div>
+                                        </li>
+                                        <li class="d-flex gap-2">
+                                            <i class="fa-solid fa-certificate text-primary mt-1"></i>
+                                            <div><strong>Certificação:</strong> AWS Certified Cloud Practitioner</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Habilidades -->
+            <section id="habilidades" class="py-4">
+                <div class="container">
+                    <div class="section-title">
+                        <h2 class="h4 mb-1">Habilidades</h2>
+                        <p class="text-secondary mb-0">Tecnologias e competências.</p>
+                    </div>
+                    <div class="row g-4 mt-1">
+                        <div class="col-12 col-lg-6">
+                            <div class="card shadow-sm h-100">
+                                <div class="card-body">
+                                    <h3 class="h6">Backend</h3>
+                                    <div class="d-flex flex-wrap gap-2 mb-3">
+                                        <span class="badge rounded-pill text-bg-primary">Java</span>
+                                        <span class="badge rounded-pill text-bg-primary">Spring Boot</span>
+                                        <span class="badge rounded-pill text-bg-primary">Node.js (NestJS)</span>
+                                        <span class="badge rounded-pill text-bg-primary">Python (FastAPI)</span>
+                                        <span class="badge rounded-pill text-bg-primary">APIs REST</span>
+                                        <span class="badge rounded-pill text-bg-primary">Apache Kafka</span>
+                                    </div>
+                                    <h3 class="h6">Banco de Dados &amp; Busca</h3>
+                                    <div class="d-flex flex-wrap gap-2 mb-3">
+                                        <span class="badge rounded-pill text-bg-secondary">PostgreSQL</span>
+                                        <span class="badge rounded-pill text-bg-secondary">MySQL</span>
+                                        <span class="badge rounded-pill text-bg-secondary">Elasticsearch</span>
+                                        <span class="badge rounded-pill text-bg-secondary">SQLite</span>
+                                    </div>
+                                    <h3 class="h6">Cloud &amp; DevOps</h3>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <span class="badge rounded-pill text-bg-secondary">AWS (Lambda, S3, Glue)</span>
+                                        <span class="badge rounded-pill text-bg-secondary">Docker</span>
+                                        <span class="badge rounded-pill text-bg-secondary">Git/GitHub</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <div class="card shadow-sm h-100">
+                                <div class="card-body">
+                                    <h3 class="h6">Frontend &amp; Dados</h3>
+                                    <div class="d-flex flex-wrap gap-2 mb-3">
+                                        <span class="badge rounded-pill text-bg-primary">React</span>
+                                        <span class="badge rounded-pill text-bg-primary">TypeScript</span>
+                                        <span class="badge rounded-pill text-bg-primary">React Native</span>
+                                        <span class="badge rounded-pill text-bg-primary">Figma</span>
+                                        <span class="badge rounded-pill text-bg-secondary">PySpark</span>
+                                        <span class="badge rounded-pill text-bg-secondary">Pandas</span>
+                                        <span class="badge rounded-pill text-bg-secondary">Scikit-learn</span>
+                                    </div>
+                                    <h3 class="h6">Linguagens</h3>
+                                    <div class="d-flex flex-wrap gap-2 mb-3">
+                                        <span class="badge rounded-pill text-bg-secondary">Java</span>
+                                        <span class="badge rounded-pill text-bg-secondary">JavaScript</span>
+                                        <span class="badge rounded-pill text-bg-secondary">TypeScript</span>
+                                        <span class="badge rounded-pill text-bg-secondary">Python</span>
+                                        <span class="badge rounded-pill text-bg-secondary">SQL</span>
+                                        <span class="badge rounded-pill text-bg-secondary">C++</span>
+                                        <span class="badge rounded-pill text-bg-secondary">HTML/CSS</span>
+                                    </div>
+                                    <hr>
+                                    <h3 class="h6">Práticas &amp; Metodologias</h3>
+                                    <ul class="mb-0">
+                                        <li>Clean Code e princípios SOLID</li>
+                                        <li>Arquitetura MVP e modelagem de dados (Star/Snowflake)</li>
+                                        <li>Scrum e Kanban</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Experiência -->
+            <section id="experiencia" class="py-4">
+                <div class="container">
+                    <div class="section-title">
+                        <h2 class="h4 mb-1">Experiência</h2>
+                        <p class="text-secondary mb-0">Trajetória profissional e acadêmica.</p>
+                    </div>
+                    <div class="accordion mt-1" id="experienciaAccordion">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#exp1">
+                                    <div>
+                                        <strong>Desenvolvedor Backend Junior</strong> — FUNDECC
+                                        <div class="small text-secondary">Mar/2026 – Atualmente</div>
+                                    </div>
+                                </button>
+                            </h3>
+                            <div id="exp1" class="accordion-collapse collapse show" data-bs-parent="#experienciaAccordion">
+                                <div class="accordion-body">
+                                    <ul class="mb-2">
+                                        <li>Desenvolvimento de APIs REST com Java e Spring Boot, aplicando Clean Code, SOLID e arquitetura MVP.</li>
+                                        <li>Modelagem e integração com banco de dados PostgreSQL.</li>
+                                        <li>Uso de Docker para conteinerização e padronização de ambientes.</li>
+                                        <li>Apoio técnico a novos desenvolvedores, incluindo onboarding e revisão de merge requests.</li>
+                                        <li>Participação ativa em decisões arquiteturais, com autonomia além do escopo júnior.</li>
+                                    </ul>
+                                    <p class="mb-0 text-secondary small"><strong>Resultados:</strong> desenvolvimento independente de um dos principais módulos do sistema (persistência, testes e regras de validação); entrega consistente de funcionalidades dentro dos prazos.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#exp2">
+                                    <div>
+                                        <strong>Engenheiro de Software Trainee</strong> — Levty
+                                        <div class="small text-secondary">Dez/2025 – Mar/2026</div>
+                                    </div>
+                                </button>
+                            </h3>
+                            <div id="exp2" class="accordion-collapse collapse" data-bs-parent="#experienciaAccordion">
+                                <div class="accordion-body">
+                                    <ul class="mb-2">
+                                        <li>Atuação consultiva junto a clientes e stakeholders, levantamento de requisitos e análise de negócios.</li>
+                                        <li>Desenvolvimento e customização de soluções na plataforma SYDLE ONE (JavaScript, Elasticsearch, APIs REST).</li>
+                                        <li>Interface entre as áreas de negócio e desenvolvimento.</li>
+                                    </ul>
+                                    <p class="mb-0 text-secondary small"><strong>Resultados:</strong> desenvolvimento independente de uma POC para um projeto recém-iniciado, um mês após entrada no time.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#exp3">
+                                    <div>
+                                        <strong>Desenvolvedor Frontend</strong> (Prestador de Serviços) — Yucca
+                                        <div class="small text-secondary">Set/2025 – Abr/2026</div>
+                                    </div>
+                                </button>
+                            </h3>
+                            <div id="exp3" class="accordion-collapse collapse" data-bs-parent="#experienciaAccordion">
+                                <div class="accordion-body">
+                                    <ul class="mb-2">
+                                        <li>Desenvolvimento e evolução de interfaces em React e TypeScript, como único desenvolvedor frontend da startup.</li>
+                                        <li>Participação em todo o ciclo do produto, da concepção à integração com APIs.</li>
+                                        <li>Uso estratégico de IA (Claude) para acelerar entregas e manter código limpo e escalável.</li>
+                                    </ul>
+                                    <p class="mb-0 text-secondary small"><strong>Resultados:</strong> desenvolvimento completo da primeira versão do projeto do principal cliente da empresa.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#exp4">
+                                    <div>
+                                        <strong>Estagiário Desenvolvedor de Dados</strong> — Compass UOL
+                                        <div class="small text-secondary">Fev/2025 – Jul/2025</div>
+                                    </div>
+                                </button>
+                            </h3>
+                            <div id="exp4" class="accordion-collapse collapse" data-bs-parent="#experienciaAccordion">
+                                <div class="accordion-body">
+                                    <ul class="mb-2">
+                                        <li>Desenvolvimento de pipelines de ETL com Python, SQL e PySpark.</li>
+                                        <li>Modelagem de Data Warehouses (Star Schema e Snowflake).</li>
+                                        <li>Análises exploratórias com Pandas e NumPy e visualizações com AWS QuickSight.</li>
+                                        <li>Implementação de arquiteturas serverless na AWS (Glue, Lambda, S3).</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#exp5">
+                                    <div>
+                                        <strong>Presidente</strong> — Emakers Junior
+                                        <div class="small text-secondary">Fev/2025 – Dez/2025</div>
+                                    </div>
+                                </button>
+                            </h3>
+                            <div id="exp5" class="accordion-collapse collapse" data-bs-parent="#experienciaAccordion">
+                                <div class="accordion-body">
+                                    <ul class="mb-2">
+                                        <li>Liderança estratégica e institucional, planejamento e relacionamento com clientes e parceiros.</li>
+                                        <li>Supervisão técnica do desenvolvimento com Java e Spring Boot.</li>
+                                        <li>Organização da 7ª Semana de Tecnologia da Informação (SE7I) da UFLA, liderando equipe de mais de 90 pessoas.</li>
+                                    </ul>
+                                    <p class="mb-0 text-secondary small"><strong>Resultados:</strong> expansão da empresa júnior de 20 para 47 membros; SE7I com cerca de 200 participantes, gerando contratações.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#exp6">
+                                    <div>
+                                        <strong>Diretor de Projetos</strong> — Emakers Junior
+                                        <div class="small text-secondary">Set/2024 – Fev/2025</div>
+                                    </div>
+                                </button>
+                            </h3>
+                            <div id="exp6" class="accordion-collapse collapse" data-bs-parent="#experienciaAccordion">
+                                <div class="accordion-body">
+                                    <ul class="mb-0">
+                                        <li>Gestão de projetos e supervisão de squads de desenvolvimento.</li>
+                                        <li>Arquitetura de soluções e levantamento de requisitos junto a clientes.</li>
+                                        <li>Apoio comercial em negociações e mentoria técnica de desenvolvedores.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#exp7">
+                                    <div>
+                                        <strong>Desenvolvedor Frontend</strong> — Emakers Junior
+                                        <div class="small text-secondary">Abr/2024 – Ago/2024</div>
+                                    </div>
+                                </button>
+                            </h3>
+                            <div id="exp7" class="accordion-collapse collapse" data-bs-parent="#experienciaAccordion">
+                                <div class="accordion-body">
+                                    <ul class="mb-0">
+                                        <li>Desenvolvimento de interfaces responsivas em React, com foco em UX/UI.</li>
+                                        <li>Implementação de layouts a partir de protótipos no Figma.</li>
+                                        <li>Colaboração com equipes multidisciplinares.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#exp8">
+                                    <div>
+                                        <strong>Pesquisador Científico</strong> — Iniciação Científica CNPq
+                                        <div class="small text-secondary">Mar/2024 – Mar/2025</div>
+                                    </div>
+                                </button>
+                            </h3>
+                            <div id="exp8" class="accordion-collapse collapse" data-bs-parent="#experienciaAccordion">
+                                <div class="accordion-body">
+                                    <ul class="mb-2">
+                                        <li>Análise e processamento de dados com Python, Pandas, NumPy e Matplotlib.</li>
+                                        <li>Implementação e avaliação de algoritmos de Machine Learning (K-Means e KNN).</li>
+                                        <li>Desenvolvimento de funcionalidades mobile em React Native integradas ao backend.</li>
+                                    </ul>
+                                    <p class="mb-0 text-secondary small"><strong>Resultados:</strong> software para avaliação de desempenho de ciclistas, registrado no INPI, com validação científica e por usuários.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Formação -->
+            <section id="formacao" class="py-4">
+                <div class="container">
+                    <div class="section-title">
+                        <h2 class="h4 mb-1">Formação</h2>
+                        <p class="text-secondary mb-0">Graduação e certificações.</p>
+                    </div>
+                    <div class="row g-4 mt-1">
+                        <div class="col-12 col-lg-6">
+                            <div class="card shadow-sm h-100">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start gap-2 mb-2">
+                                        <i class="fa-solid fa-graduation-cap text-primary mt-1"></i>
+                                        <div>
+                                            <h3 class="h6 mb-1">Bacharelado em Ciência da Computação</h3>
+                                            <p class="text-secondary small mb-0">Universidade Federal de Lavras (UFLA) — Em andamento (Jul/2023 – Jul/2027)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <div class="card shadow-sm h-100">
+                                <div class="card-body">
+                                    <h3 class="h6 mb-3">Certificações e idiomas</h3>
+                                    <ul class="list-unstyled mb-0">
+                                        <li class="d-flex gap-2 mb-2">
+                                            <i class="fa-solid fa-certificate text-primary mt-1"></i>
+                                            <div>AWS Certified Cloud Practitioner</div>
+                                        </li>
+                                        <li class="d-flex gap-2">
+                                            <i class="fa-solid fa-language text-primary mt-1"></i>
+                                            <div>Inglês — Nível intermediário (leitura, escrita, compreensão e fala)</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Contato -->
+            <section id="contato" class="py-4">
+                <div class="container">
+                    <div class="section-title">
+                        <h2 class="h4 mb-1">Contato</h2>
+                        <p class="text-secondary mb-0">Como falar comigo.</p>
+                    </div>
+                    <div class="row g-4 mt-1">
+                        <div class="col-12 col-lg-6">
+                            <div class="card shadow-sm">
+                                <div class="card-body">
+                                    <ul class="list-unstyled mb-0">
+                                        <li class="d-flex gap-2 align-items-center mb-2">
+                                            <i class="fa-solid fa-envelope text-primary"></i>
+                                            <a class="link-underline link-underline-opacity-0" href="mailto:moraesgabriel0003@gmail.com">
+                                                moraesgabriel0003@gmail.com
+                                            </a>
+                                        </li>
+                                        <li class="d-flex gap-2 align-items-center mb-2">
+                                            <i class="fa-solid fa-phone text-primary"></i>
+                                            <span>(35) 99228-8233</span>
+                                        </li>
+                                        <li class="d-flex gap-2 align-items-center mb-2">
+                                            <i class="fa-solid fa-location-dot text-primary"></i>
+                                            <span>Lavras, Minas Gerais</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <div class="card shadow-sm">
+                                <div class="card-body">
+                                    <ul class="list-unstyled mb-0">
+                                        <li class="d-flex gap-2 align-items-center mb-2">
+                                            <i class="fa-brands fa-github text-primary"></i>
+                                            <a class="link-underline link-underline-opacity-0" href="https://github.com/gabriel-moraes03" target="_blank" rel="noreferrer">
+                                                github.com/gabriel-moraes03
+                                            </a>
+                                        </li>
+                                        <li class="d-flex gap-2 align-items-center">
+                                            <i class="fa-brands fa-linkedin text-primary"></i>
+                                            <a class="link-underline link-underline-opacity-0" href="https://www.linkedin.com/in/gabriel-moraes-de-oliveira" target="_blank" rel="noreferrer">
+                                                linkedin.com/in/gabriel-moraes-de-oliveira
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Rodapé da Página -->
+        <footer class="border-top py-4">
+            <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
+                <small class="text-secondary">© <span id="year"></span> Gabriel Moraes de Oliveira</small>
+                <small class="text-secondary">Feito com HTML + Bootstrap + um pouco de CSS/JS</small>
+            </div>
+        </footer>
+
+        <!-- Bootstrap JS (necessário para navbar colapsável) -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- JS do projeto -->
+        <script src="assets/js/script.js"></script>
+    </body>
+</html>
