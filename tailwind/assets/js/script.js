@@ -21,7 +21,6 @@ if (themeToggle) {
     });
 }
 
-// Menu mobile (substitui o collapse do Bootstrap)
 var navToggle = document.getElementById("navToggle");
 var navMenu = document.getElementById("navMenu");
 
@@ -31,7 +30,6 @@ if (navToggle && navMenu) {
     });
 }
 
-// Ano do rodapé
 var yearEl = document.getElementById("year");
 if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
